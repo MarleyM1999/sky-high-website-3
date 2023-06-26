@@ -1,0 +1,572 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fcfefd;
+}
+
+.page-layout {
+    width: 100vw;
+    height: 100vh;
+}
+
+.nav-container {
+    display: flex;
+    height: 70px;
+    background-color: #3d7298;
+    justify-content: space-between;
+    padding: 0 30px;
+    align-items: center;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-left img {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.nav-left li a {
+    color: #fcfefd;
+    font-weight: bold;
+}
+
+.nav-left li a:hover {
+    color: #c3c7cc;
+}
+
+.login-signup a {
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: #fcfefd;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 2px solid #fcfefd;
+}
+
+.login-signup a:hover {
+    background-color: #c3c7cc;
+    color: #3d7298;
+}
+
+.sign-up-btn {
+    background-color: #90aac2;
+    color: #3d7298;
+    margin-left: 10px;
+}
+
+.hero-section {
+    background: url('../Images/pexels-pixabay-461573.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fcfefd;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3d7298;
+    color: #fcfefd;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #2b5070;
+}
+
+.hero-section h1,
+.hero-section p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+    background-color: #3d7298;
+    color: #fcfefd;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links li a {
+    text-decoration: none;
+    color: #fcfefd;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.footer-links li a:hover {
+    color: #c3c7cc;
+}
+
+.footer-social {
+    margin-top: 10px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin: 0 5px;
+    width: 30px;
+    height: 30px;
+    background-color: #fcfefd;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.footer-social a:hover {
+    background-color: #c3c7cc;
+}
+
+.footer-social img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px;
+}
+
+.weather-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px;
+    background-color: #f0f4f8;
+    border-radius: 10px;
+    width: 80%;
+    margin: 30px auto;
+    box-shadow: 0px 10px 30px -5px rgba(73, 84, 80, 0.15);
+}
+
+.weather-section h1,
+.weather-section h2,
+.weather-section h3 {
+    color: #3d7298;
+}
+
+.weather-section h1 {
+    font-size: 2em;
+}
+
+.weather-section h2 {
+    font-size: 1.5em;
+}
+
+.weather-section h3 {
+    font-size: 1.2em;
+    color: #3d7298;
+}
+
+.weather-section .humidity,
+.weather-section .wind,
+.weather-section .condition {
+    color: #90aac2;
+    font-size: 1em;
+}
+
+.weather-tips-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.weather-tips-section h2 {
+    color: #3d7298;
+    margin-bottom: 10px;
+}
+
+.weather-tips-section p,
+.weather-tips-section ul {
+    color: #90aac2;
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.weather-tips-section ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    text-align: left;
+}
+
+/* contacts page */ 
+
+.contact-section {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0;
+    background-color: #f0f4f8;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px -5px rgba(73, 84, 80, 0.15);
+}
+
+.contact-section h1 {
+    text-align: center;
+    color: #3d7298;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.contact-section p {
+    color: #3d7298;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fcfefd;
+    border-radius: 10px;
+}
+
+.contact-section label {
+    font-weight: bold;
+    color: #3d7298;
+    margin-bottom: 5px;
+}
+
+.contact-section input[type="text"],
+.contact-section input[type="email"],
+.contact-section textarea {
+    padding: 10px;
+    border: 1px solid #3d7298;
+    border-radius: 4px;
+    font-size: 1em;
+    width: 100%;
+}
+
+.contact-section textarea {
+    height: 200px;
+    resize: vertical;
+}
+
+.contact-section input[type="submit"] {
+    background-color: #3d7298;
+    color: #fcfefd;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    width: 50%;
+    margin-top: 20px;
+}
+
+.contact-section input[type="submit"]:hover {
+    background-color: #2b5070;
+}
+
+.contact-details {
+    margin-top: 50px;
+    text-align: center;
+    padding: 20px;
+    background-color: #fcfefd;
+    border-radius: 10px;
+}
+
+.contact-details h2 {
+    color: #3d7298;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.contact-details p {
+    color: #3d7298;
+    line-height: 1.5;
+    font-size: 1.2em;
+}
+
+
+/* about section */
+.about-section {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0;
+    background-color: #f0f4f8;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px -5px rgba(73, 84, 80, 0.15);
+}
+
+.about-section h1 {
+    text-align: center;
+    color: #3d7298;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.about-section p {
+    color: #3d7298;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+.about-details h2 {
+    color: #3d7298;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 2em;
+    text-decoration: underline;
+}
+
+
+
+
+/* Add the following styles to the existing CSS */
+
+.registration-section {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0;
+    background-color: #f0f4f8;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px -5px rgba(73, 84, 80, 0.15);
+  }
+  
+  .registration-section h2 {
+    text-align: center;
+    color: #3d7298;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+  }
+  
+  .registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fcfefd;
+    border-radius: 10px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    color: #3d7298;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="password"] {
+    padding: 10px;
+    border: 1px solid #3d7298;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+  
+  .form-group input[type="submit"] {
+    background-color: #3d7298;
+    color: #fcfefd;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    width: 50%;
+    margin-top: 20px;
+  }
+  
+  .form-group input[type="submit"]:hover {
+    background-color: #2b5070;
+  }
+  
+  .registration-section {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .registration-section h2 {
+    margin-bottom: 30px;
+    color: #3d7298;
+    font-size: 24px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #3d7298;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input[type="text"]:focus,
+  .form-group input[type="email"]:focus,
+  .form-group input[type="password"]:focus {
+    outline: none;
+    border-color: #3d7298;
+  }
+  
+  button.signup-btn {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #3d7298;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.signup-btn:hover {
+    background-color: #2b5070;
+  }
+  
+  p {
+    margin-top: 20px;
+    color: #3d7298;
+    font-size: 14px;
+  }
+  
+  p a {
+    color: #3d7298;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  p a:hover {
+    text-decoration: underline;
+  }
+  
+
+  .success-section {
+    text-align: center;
+    padding: 80px 0;
+    background-color: #f4f4f4;
+  }
+  
+  .success-container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .success-container h2 {
+    color: #3d7298;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .success-container p {
+    color: #3d7298;
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  
+  .btn-back {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3d7298;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-back:hover {
+    background-color: #2b5070;
+  }
+  
