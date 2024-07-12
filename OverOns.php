@@ -12,15 +12,12 @@
         <!-- Navigatiebalk -->
         <nav>
             <div class="nav-container">
-                <div class="nav-left">
-                        <img class="logo" src="./Images/logo.png" alt="mooi">
-                        <ul>
-                        <li><a href="./index.php">Home</a></li>
-                        <li><a href="./OverOns.php">Over</a></li>
-                        <li><a href="./Weather.php">Weer</a></li>
-                        <li><a href="./Contact.php">Contact</a></li>
-                        </ul>
-                </div>
+            <ul>
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./OverOns.php">Over</a></li>
+    <li><a href="./Weather.php">Weer</a></li>
+    <li><a href="./Contact.php">Contact</a></li>
+</ul>
 
                 <div class="nav-right">
                     <div class="login-signup">

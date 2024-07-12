@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "BoysVanBoven";
-$dbname = "Signup_db";
+$dbname = "SkyHigh";
 
 // Create a connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -17,25 +17,19 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 // Prepare and execute the SQL statement
-$stmt = $conn->prepare("SELECT * FROM users WHERE (username = ? OR email = ?) AND password = ?");
-$stmt->bind_param("sss", $username, $username, $password);
+$stmt = $conn->prepare("SELECT * FROM users WHERE username = ? OR email = ?");
+$stmt->bind_param("ss", $username, $username);
 $stmt->execute();
-
-// Get the result
 $result = $stmt->get_result();
+$user = $result->fetch_assoc();
 
-// Check if the user is authenticated
-if ($result->num_rows === 1) {
+if ($user && password_verify($password, $user['password'])) {
     // User is authenticated
-    // Start a session and set session variables
     session_start();
-    $_SESSION['username'] = $username;
-    
-    // Redirect to the dashboard or protected page
+    $_SESSION['username'] = $user['username'];
     header("Location: dashboard.php");
     exit();
 } else {
-    // User is not authenticated
     echo "Invalid username/email or password.";
 }
 

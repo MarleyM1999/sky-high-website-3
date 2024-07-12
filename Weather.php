@@ -15,11 +15,12 @@
                 <div class="nav-left">
                         <img class="logo" src="./Images/logo.png" alt="mooi">
                         <ul>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./OverOns.html">Over</a></li>
-                        <li><a href="./Weather.html">Weer</a></li>
-                        <li><a href="./Contact.html">Contact</a></li>
-                        </ul>
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./OverOns.php">Over</a></li>
+    <li><a href="./Weather.php">Weer</a></li>
+    <li><a href="./Contact.php">Contact</a></li>
+</ul>
+
                 </div>
 
                 <div class="nav-right">
