@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Dashboard</title>
-  <link rel="stylesheet" type="text/css" href="./Assets/Home.css">
+  <link rel="stylesheet" type="text/css" href="./Assets/dashboard.css">
 </head>
 <body>
   <?php
@@ -18,43 +18,41 @@
   ?>
   <div class="page-layout">
     <!-- Navigation bar -->
-    <nav>
-      <div class="nav-container">
-        <div class="nav-left">
+    <div class="dashboard">
+      <nav class="dashboard-nav">
+        <div class="nav-container">
           <img class="logo" src="./Images/logo.png" alt="mooi">
           <ul>
             <li><a href="./home.html">Home</a></li>
             <li><a href="./OverOns.html">Over</a></li>
             <li><a href="./Weather.html">Weer</a></li>
             <li><a href="./Contact.html">Contact</a></li>
+            <li><a href="./planning.php">Planning</a></li>
           </ul>
-        </div>
-
-        <div class="nav-right">
-          <div class="login-signup">
-            <?php if (isset($_SESSION['username'])): ?>
-              <!-- User is logged in, show username and logout button -->
+          <?php if (isset($_SESSION['username'])): ?>
+            <div class="user-info">
               <span>Welcome, <?php echo $_SESSION['username']; ?>!</span>
               <a href="logout.php">Logout</a>
-            <?php else: ?>
-              <!-- User is not logged in, show login and sign up links -->
-              <a href="./login.html">Inloggen</a>
-              <a class="sign-up-btn" href="./signup.html">Registreren</a>
-            <?php endif; ?>
-          </div>
+            </div>
+          <?php else: ?>
+            <a href="./inloggen.php">Inloggen</a>
+                        <a class="sign-up-btn" href="./accountmkn.php">Registreren</a>
+          <?php endif; ?>
+        </div>
+      </nav>
+
+      <!-- Dashboard content -->
+      <div class="dashboard-content">
+        <!-- Add your dashboard content here -->
+
+        <!-- Planning section -->
+        <div class="planning-section">
+          <h1>Planning</h1>
+          <!-- Add your planning section content here -->
         </div>
       </div>
-    </nav>
-
-    <!-- Hero section -->
-    <div class="hero-section">
-      <div class="hero-content">
-        <h1>Welkom bij SkyHigh!</h1>
-        <p>Optimaliseer je vliegtijd en verbeter je vliegvaardigheden met ons. Sluit je aan bij de gemeenschap die jouw passie voor zweefvliegen deelt.</p>
-        <a href="./signup.html" class="cta-button">Doe met ons mee</a>
-      </div>
     </div>
-
+    
     <!-- Footer -->
     <footer>
       <div class="footer-content">

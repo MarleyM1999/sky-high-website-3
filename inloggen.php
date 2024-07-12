@@ -12,18 +12,19 @@
         <div class="nav-left">
           <img class="logo" src="./Images/logo.png" alt="mooi">
           <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./OverOns.html">Over</a></li>
-            <li><a href="./Weather.html">Weer</a></li>
-            <li><a href="./Contact.html">Contact</a></li>
+            <li><a href="./index.php">Home</a></li>
+            <li><a href="./OverOns.php">Over</a></li>
+            <li><a href="./Weather.php">Weer</a></li>
+            <li><a href="./Contact.php">Contact</a></li>
           </ul>
         </div>
 
         <div class="nav-right">
-          <div class="login-signup">
-            <a href="#">Inloggen</a>
-            <a class="sign-up-btn" href="./signup.html">Registreren</a>
-          </div>
+                    <div class="login-signup">
+                    <a href="./inloggen.php">Inloggen</a>
+                        <a class="sign-up-btn" href="./accountmkn.php">Registreren</a>
+                    </div>
+                </div>
         </div>
       </div>
     </nav>
@@ -31,7 +32,7 @@
     <!-- Login Form -->
     <div class="container">
       <h1>Login Form</h1>
-      <form action="login.php" method="POST">
+      <form action="./login.php" method="POST">
         <input type="text" name="username" placeholder="Username/Email" required>
         <input type="password" name="password" placeholder="Password" required>
         <button type="submit">Login</button>

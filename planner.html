@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #fcfefd;
+    }
+
+    .page-layout {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .nav-container {
+        display: flex;
+        height: 70px;
+        background-color: #3d7298;
+        justify-content: space-between;
+        padding: 0 30px;
+        align-items: center;
+    }
+
+    .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        gap: 30px;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.3s ease;
+    }
+
+    .nav-left li a {
+        color: #fcfefd;
+        font-weight: bold;
+    }
+
+    .nav-left li a:hover {
+        color: #c3c7cc;
+    }
+
+    .login-signup a {
+        padding: 10px 20px;
+        border-radius: 25px;
+        color: #fcfefd;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border: 2px solid #fcfefd;
+    }
+
+    .login-signup a:hover {
+        background-color: #c3c7cc;
+        color: #3d7298;
+    }
+
+    .sign-up-btn {
+        background-color: #90aac2;
+        color: #3d7298;
+        margin-left: 10px;
+    }
+
+    footer {
+        background-color: #3d7298;
+        color: #fcfefd;
+        padding: 20px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .footer-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .footer-content p {
+        font-size: 0.9em;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    .footer-links {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .footer-links li a {
+        text-decoration: none;
+        color: #fcfefd;
+        transition: color 0.3s ease;
+        font-weight: bold;
+    }
+
+    .footer-links li a:hover {
+        color: #c3c7cc;
+    }
+  </style>
+</head>
+<body>
+  <?php
+    // Start the session
+    session_start();
+
+    // Check if the user is logged in
+    if (!isset($_SESSION['username'])) {
+        // User is not logged in, redirect to the login page
+        header("Location: login.html");
+        exit();
+    }
+    
+    // Connect to database (replace these values with your database connection info)
+    $host = "localhost";
+    $user = "root";
+    $password = "";
+    $database = "flight_planner";
+    $conn = new mysqli($host, $user, $password, $database);
+
+    // Process form data when form is submitted
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $instructor = $_POST['instructor'];
+        $date = $_POST['date'];
+      
+        // Insert into the database
+        $stmt = $conn->prepare("INSERT INTO flights (instructor, date) VALUES (?, ?)");
+        $stmt->bind_param("ss", $instructor, $date);
+      
+        if ($stmt->execute()) {
+            echo "Flight planned successfully!";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+    }
+    
+    // Get the list of flights
+    $result = $conn->query("SELECT * FROM flights");
+  ?>
+  
+  <div class="page-layout">
+    <!-- Navigation bar -->
+    <!-- ... -->
+
+    <!-- Planning section -->
+    <form method="post">
+      <label for="instructor">Instructor:</label><br>
+      <select name="instructor" id="instructor">
+        <?php
+        $instructors = ["John Doe", "Jane Smith", "Michael Johnson"];
+        foreach ($instructors as $instructor) {
+          echo "<option value=\"$instructor\">$instructor</option>";
+        }
+        ?>
+      </select><br>
+      <label for="date">Date:</label><br>
+      <input type="date" id="date" name="date"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+
+    <h2>Planned flights:</h2>
+    <?php
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            echo "Instructor: " . $row["instructor"]. " - Date: " . $row["date"]. "<br>";
+        }
+    } else {
+        echo "No planned flights";
+    }
+    ?>
+  
+    <!-- Footer -->
+    <!-- ... -->
+  </div>
+  <script src="./Assets/Engine.js"></script>
+</body>
+</html>

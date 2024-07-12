@@ -1,0 +1,92 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #F9F9F9;
+  color: #333;
+}
+
+.page-layout {
+  width: 100vw;
+  height: 100vh;
+}
+
+.nav-container {
+  display: flex;
+  height: 70px;
+  background-color: #5B4FEE;
+  justify-content: space-between;
+  padding: 0 30px;
+  align-items: center;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-left img {
+  height: 65px;
+  width: auto;
+  object-fit: contain;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.nav-left li a {
+  color: #FFF;
+  font-weight: bold;
+}
+
+.nav-left li a:hover {
+  color: #E0E0E0;
+}
+
+.login-signup {
+  display: flex;
+  align-items: center;
+}
+
+.login-signup span {
+  color: #FFF;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-right: 15px;
+}
+
+.login-signup a {
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: #FFF;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 2px solid #FFF;
+}
+
+.login-signup a:hover {
+  background-color: #FFF;
+  color: #5B4FEE;
+}
+
+.sign-up-btn {
+  background-color: #90aac2;
+  color: #3d7298;
+  margin-left: 10px;
+}
+
+/* Rest of your CSS... */
